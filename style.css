@@ -1,0 +1,706 @@
+body {
+    background-color: #000080;
+    color: #FFFFFF;
+    font-family: "Courier New", Courier, monospace;
+background-image:
+    linear-gradient(45deg, #000066 25%, transparent 25%),
+    linear-gradient(-45deg, #000066 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #000066 75%),
+    linear-gradient(-45deg, transparent 75%, #000066 75%);
+
+background-size: 20px 20px;
+background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+}
+
+
+.site-header {
+    background-color: #000000;
+    border: 3px ridge #C0C0C0;
+    padding: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #00FF00;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #FFFF00;
+}
+
+.navigation a {
+    color: #00FFFF;
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+/* =====================================
+   GEOCITIES RETRO BANNER
+===================================== */
+
+.retro-banner {
+    max-width: 900px;
+    margin: 0 auto 10px;
+    padding: 15px 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+
+    color: #FFFF00;
+    background: linear-gradient(
+        90deg,
+        #FF0000,
+        #990000,
+        #FF0000
+    );
+
+    border: 4px ridge #FFFFFF;
+    outline: 2px solid #000000;
+
+    font-family: "Courier New", monospace;
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px #000000;
+}
+
+.banner-star {
+    color: #FFFFFF;
+    animation: star-flash 0.8s steps(2, start) infinite;
+}
+
+/* Tulisan berjalan */
+
+.marquee-box {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    padding: 9px 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    color: #FF0000;
+    background: #FFFFFF;
+
+    border: 3px ridge #FF0000;
+    outline: 1px dashed #000000;
+
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee-scroll 18s linear infinite;
+}
+
+.retro-gif {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes star-flash {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.2;
+    }
+}
+
+/* Menghormati preferensi pengurangan animasi */
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-text,
+    .banner-star {
+        animation: none;
+    }
+
+    .marquee-text {
+        padding-left: 10px;
+        white-space: normal;
+    }
+}
+
+
+/* =====================================
+   MY SKILLS: RETRO BADGES
+===================================== */
+
+.skills-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill-badge {
+    display: inline-block;
+    padding: 8px 12px;
+
+    color: #FFFFFF;
+    background: #FF0000;
+
+    border: 3px outset #FFFFFF;
+    outline: 1px solid #000000;
+
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    cursor: default;
+    transition: transform 0.15s;
+}
+
+.skill-badge:hover {
+    transform: translateY(-3px) rotate(-2deg);
+}
+
+/* Variasi warna retro */
+
+.badge-html {
+    background: #FF4500;
+}
+
+.badge-css {
+    background: #0000CC;
+}
+
+.badge-js {
+    color: #000000;
+    background: #FFFF00;
+}
+
+.badge-php {
+    background: #663399;
+}
+
+.badge-laravel {
+    background: #CC0000;
+}
+
+.badge-python {
+    color: #000000;
+    background: #FFD43B;
+}
+
+.badge-mysql {
+    background: #006699;
+}
+
+
+
+/* Font warna-warni ala GeoCities */
+
+@keyframes rainbow-blink {
+    0% {
+        color: #FF0000;
+    }
+
+    20% {
+        color: #FF00FF;
+    }
+
+    40% {
+        color: #0000FF;
+    }
+
+    60% {
+        color: #00AA00;
+    }
+
+    80% {
+        color: #FF8C00;
+    }
+
+    100% {
+        color: #FFFF00;
+    }
+}
+
+.skill-badge {
+    animation: rainbow-blink 0.8s steps(1, end) infinite;
+}
+
+/* =====================================
+   GEOCITIES CONTACT US
+===================================== */
+
+.contact-marquee {
+    color: #FF0000;
+    font-weight: bold;
+    text-align: center;
+
+    animation: rainbow-blink 0.8s steps(1, end) infinite;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    margin: 24px 0;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 12px 18px;
+
+    color: #FFFF00;
+    background: #FF0000;
+
+    border: 4px outset #FFFFFF;
+    outline: 2px solid #000000;
+
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+
+    transition: transform 0.15s;
+}
+
+.contact-button:hover {
+    color: #FF0000;
+    background: #FFFF00;
+
+    transform: scale(1.08);
+}
+
+.contact-footer {
+    margin-top: 24px;
+
+    color: #0000FF;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 480px) {
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
+}
+
+
+.contact-button i {
+    margin-right: 6px;
+    font-size: 15px;
+}
+
+
+
+/* Font Awesome icons in skill badges */
+
+.skill-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.skill-badge i {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+
+/* Teks berkedip, ikon tetap statis */
+
+.skill-badge {
+    animation: none;
+}
+
+.skill-badge i {
+    animation: none;
+    color: #FFFFFF;
+}
+
+/* Hanya teks yang berubah warna */
+.skill-badge {
+    color: #FF0000;
+    animation: rainbow-blink 0.8s steps(1, end) infinite;
+}
+
+
+/* GeoCities Guestbook */
+
+#guestbook {
+    border: 4px ridge #FF0000;
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+#guestbook h2 {
+    color: #FF0000;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+
+.guestbook-frame {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+
+    overflow: hidden;
+    border: 3px ridge #C0C0C0;
+    background: #FFFFFF;
+}
+
+.guestbook-frame iframe {
+    display: block;
+    width: 100%;
+    height: 350px;
+    border: none;
+    background: #FFFFFF;
+}
+
+#guestbook > p {
+    text-align: center;
+}
+
+
+/* =====================================
+   KAZZPARS RETRO MUSIC PLAYER
+===================================== */
+
+#music-player {
+    width: 100%;
+    max-width: 360px;
+    margin: 20px auto;
+    padding: 10px;
+
+    color: #FF0000;
+    background: #FFFFFF;
+
+    border: 4px ridge #FF0000;
+    outline: 2px solid #000000;
+
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+}
+
+.player-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px;
+    color: #FFFFFF;
+    background: #FF0000;
+
+    font-weight: bold;
+}
+
+.player-version {
+    margin-left: auto;
+    font-size: 10px;
+}
+
+.player-body {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 4px;
+}
+
+.album-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+
+    color: #FFFFFF;
+    background: #000000;
+
+    border: 3px ridge #FFFFFF;
+    font-size: 36px;
+}
+
+.album-icon.spinning i {
+    animation: disc-spin 3s linear infinite;
+}
+
+@keyframes disc-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.player-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.now-playing {
+    margin-bottom: 5px;
+    font-size: 10px;
+}
+
+#track-name {
+    overflow-wrap: anywhere;
+    font-weight: bold;
+}
+
+.equalizer {
+    display: flex;
+    align-items: end;
+    gap: 3px;
+    height: 20px;
+    margin-top: 8px;
+}
+
+.equalizer span {
+    width: 5px;
+    height: 4px;
+    background: #FF0000;
+}
+
+#music-player.is-playing .equalizer span {
+    animation: equalizer-bounce 0.6s ease-in-out infinite alternate;
+}
+
+#music-player.is-playing .equalizer span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+#music-player.is-playing .equalizer span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+#music-player.is-playing .equalizer span:nth-child(4) {
+    animation-delay: 0.1s;
+}
+
+#music-player.is-playing .equalizer span:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+@keyframes equalizer-bounce {
+    from { height: 4px; }
+    to { height: 19px; }
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.player-controls button {
+    min-width: 34px;
+    min-height: 30px;
+
+    color: #FF0000;
+    background: #FFFFFF;
+    border: 3px outset #FFFFFF;
+
+    cursor: pointer;
+}
+
+.player-controls button:active {
+    border-style: inset;
+}
+
+#player-time {
+    margin-left: auto;
+    font-size: 10px;
+}
+
+.progress-container {
+    height: 12px;
+    overflow: hidden;
+
+    background: #DDDDDD;
+    border: 2px inset #FFFFFF;
+    cursor: pointer;
+}
+
+#progress-bar {
+    width: 0;
+    height: 100%;
+    background: #FF0000;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.volume-control input {
+    width: 100%;
+    min-width: 0;
+    accent-color: #FF0000;
+}
+
+#player-status {
+    margin-top: 10px;
+    padding: 5px;
+
+    color: #FFFF00;
+    background: #000000;
+
+    font-size: 10px;
+    text-align: center;
+}
+
+@media (max-width: 400px) {
+    #music-player {
+        max-width: 100%;
+    }
+}
+
+
+/* RETRO CLOCK & CALENDAR */
+#retro-datetime {
+    width: min(100% - 24px, 500px);
+    margin: 20px auto;
+    padding: 12px;
+    box-sizing: border-box;
+    color: #ff0000;
+    background: #ffffff;
+    border: 3px ridge #ff0000;
+    font-family: "Courier New", monospace;
+    text-align: center;
+    box-shadow: 4px 4px 0 #000000;
+}
+
+.datetime-header {
+    padding: 8px;
+    margin-bottom: 12px;
+    color: #ffffff;
+    background: #ff0000;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.clock-display {
+    padding: 12px 8px;
+    border: 2px inset #cccccc;
+    background: #fffafa;
+}
+
+.clock-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+#digital-clock {
+    margin: 8px 0;
+    font-size: clamp(28px, 8vw, 42px);
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 2px 2px 0 #ffcccc;
+}
+
+#clock-period {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.calendar-display {
+    margin-top: 12px;
+    padding: 10px;
+    border: 2px ridge #cccccc;
+}
+
+.calendar-heading {
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.calendar-weekdays,
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.calendar-weekdays {
+    margin-bottom: 6px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.calendar-days span {
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    aspect-ratio: 1;
+    border: 1px solid #dddddd;
+    font-size: 12px;
+}
+
+.calendar-days .today {
+    color: #ffffff;
+    background: #ff0000;
+    border: 2px solid #000000;
+    font-weight: bold;
+}
+
+.calendar-days .empty {
+    border-color: transparent;
+}
+
+.calendar-today {
+    margin-top: 12px;
+    padding: 8px 4px;
+    background: #fff0f0;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+@media (max-width: 360px) {
+    #retro-datetime {
+        padding: 8px;
+    }
+
+    .calendar-days,
+    .calendar-weekdays {
+        gap: 2px;
+    }
+
+    .calendar-days span {
+        font-size: 10px;
+    }
+}
