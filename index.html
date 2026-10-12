@@ -1,310 +1,389 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>X Portal</title>
+
     <link rel="stylesheet" href="./style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<script src="./music.js" defer></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <script src="./music.js" defer></script>
+    <script src="./dateTime.js" defer></script>
 </head>
+
 <body>
-    <header class="site-header">
-        <a href="#home" class="logo">Kazzpars<span></span></a>
+    
+    
+
+    <div class="retro-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="retro-sidebar">
+
+            <!-- Clock and Calendar -->
+            <section id="retro-datetime">
+                <div class="datetime-header">
+                    <i class="fa-regular fa-clock"></i>
+                    SYSTEM DATE & TIME.EXE
+                </div>
+
+                <div class="clock-display">
+                    <div class="clock-label">CURRENT TIME</div>
+                    <div id="digital-clock">00:00:00</div>
+                    <div id="clock-period">WIB (UTC+7)</div>
+                </div>
+
+                <div class="calendar-display">
+                    <div class="calendar-heading">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <span id="calendar-month">MONTH YEAR</span>
+                    </div>
+
+                    <div class="calendar-weekdays">
+                        <span>MIN</span>
+                        <span>SEN</span>
+                        <span>SEL</span>
+                        <span>RAB</span>
+                        <span>KAM</span>
+                        <span>JUM</span>
+                        <span>SAB</span>
+                    </div>
+
+                    <div id="calendar-days" class="calendar-days"></div>
+
+                    <div id="calendar-today" class="calendar-today">
+                        TODAY: -
+                    </div>
+                </div>
+            </section>
+
+            <!-- Music Player -->
+            <section id="music-player">
+                <div class="player-title">
+                    <i class="fa-solid fa-compact-disc"></i>
+                    X PLAYER.EXE
+                    <span class="player-version">v1.0</span>
+                </div>
+
+                <div class="player-body">
+                    <div class="album-icon" id="album-icon">
+                        <i class="fa-solid fa-compact-disc"></i>
+                    </div>
+
+                    <div class="player-info">
+                        <div class="now-playing">NOW PLAYING:</div>
+                        <div id="track-name">No track selected</div>
+
+                        <div class="equalizer" id="equalizer">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <audio id="audio-player" preload="metadata"></audio>
+
+                <div class="player-controls">
+                    <button id="prev-track" aria-label="Previous track">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </button>
+
+                    <button id="play-pause" aria-label="Play music">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+
+                    <button id="next-track" aria-label="Next track">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </button>
+
+                    <span id="player-time">00:00 / 00:00</span>
+                </div>
+
+                <div class="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+
+                <label class="volume-control">
+                    <i class="fa-solid fa-volume-high"></i>
+                    Volume
+
+                    <input
+                        id="volume-slider"
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.05"
+                        value="0.7"
+                    >
+                </label>
+
+                <div id="player-status" role="status" aria-live="polite">
+                    READY TO PLAY
+                </div>
+            </section>
+
+            <!-- Sidebar Decoration -->
+            <div class="sidebar-decoration">
+                <p>✦ YOU ARE VISITOR ✦</p>
+                <img
+                    src="./img/underconstruction.gif"
+                    alt="Under construction"
+                    loading="lazy"
+                >
+                <p>BEST VIEWED WITH CURIOSITY!</p>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="retro-main-column">
+            <header class="site-header">
+        
+        <a href="#home" class="logo">X<span></span></a>
+
         <h1>Welcome to My Website</h1>
+
         <nav class="navigation">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#guestbook">Guestbook</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="retro-main">
 
-<!-- Retro Clock & Calendar -->
-<section id="retro-datetime">
-    <div class="datetime-header">
-        <i class="fa-regular fa-clock"></i>
-        SYSTEM DATE & TIME.EXE
-    </div>
-
-    <div class="clock-display">
-        <div class="clock-label">CURRENT TIME</div>
-        <div id="digital-clock">00:00:00</div>
-        <div id="clock-period">WIB (UTC+7)</div>
-    </div>
-
-    <div class="calendar-display">
-        <div class="calendar-heading">
-            <i class="fa-regular fa-calendar-days"></i>
-            <span id="calendar-month">MONTH YEAR</span>
-        </div>
-
-        <div class="calendar-weekdays">
-            <span>MIN</span>
-            <span>SEN</span>
-            <span>SEL</span>
-            <span>RAB</span>
-            <span>KAM</span>
-            <span>JUM</span>
-            <span>SAB</span>
-        </div>
-
-        <div id="calendar-days" class="calendar-days"></div>
-
-        <div id="calendar-today" class="calendar-today">
-            TODAY: -
-        </div>
-    </div>
-</section>
-
-        
-<!-- Retro Mini Music Player -->
-<section id="music-player">
-    <div class="player-title">
-        <i class="fa-solid fa-compact-disc"></i>
-        KAZZPARS PLAYER.EXE
-        <span class="player-version">v1.0</span>
-    </div>
-
-    <div class="player-body">
-        <div class="album-icon" id="album-icon">
-            <i class="fa-solid fa-compact-disc"></i>
-        </div>
-
-        <div class="player-info">
-            <div class="now-playing">NOW PLAYING:</div>
-
-            <div id="track-name">No track selected</div>
-
-            <div class="equalizer" id="equalizer">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </div>
-
-    <audio id="audio-player" preload="metadata"></audio>
-
-    <div class="player-controls">
-        <button id="prev-track" aria-label="Previous track">
-            <i class="fa-solid fa-backward-step"></i>
-        </button>
-
-        <button id="play-pause" aria-label="Play music">
-            <i class="fa-solid fa-play"></i>
-        </button>
-
-        <button id="next-track" aria-label="Next track">
-            <i class="fa-solid fa-forward-step"></i>
-        </button>
-
-        <span id="player-time">00:00 / 00:00</span>
-    </div>
-
-    <div class="progress-container">
-        <div id="progress-bar"></div>
-    </div>
-
-    <label class="volume-control">
-        <i class="fa-solid fa-volume-high"></i>
-        Volume
-        <input
-            id="volume-slider"
-            type="range"
-            min="0"
-            max="1"
-            step="0.05"
-            value="0.7"
-        >
-    </label>
-
-    <div id="player-status" role="status" aria-live="polite">
-        READY TO PLAY
-    </div>
-</section>
-
-        <section id="home" class="hero">
-<!-- Retro GeoCities Banner -->
-<div class="retro-banner">
-    <span class="banner-star">★</span>
-    <span>WELCOME TO KAZZPARS-PORTAL</span>
-    <span class="banner-star">★</span>
+            <!-- Home -->
+            <section id="home" class="hero">
+                <div class="fire-decoration">
+    <img src="./img/fire2.gif" alt="Animated fire" align-items="center"> 
 </div>
+                <div class="retro-banner">
+                    <span class="banner-star">★</span>
+                    <span>WELCOME TO X-PORTAL</span>
+                    <span class="banner-star">★</span>
+                </div>
 
-<div class="marquee-box">
-    <div class="marquee-text">
-        ✦ WELCOME TO MY HOMEPAGE ✦
-        STUDENT INFORMATICS ✦
-        WELCOME TO MY HOMEPAGE ✦
-    </div>
-</div>
-<!-- <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" alt="Retro GIF" class="retro-gif"> -->
-<img src= "./img/welcome.gif" alt="Retro GIF" class="retro-gif">
-<br>
-<img src="./img/underconstruction.gif" alt="Retro GIF" class="retro-gif">
+                <div class="marquee-box">
+                    <div class="marquee-text">
+                        ✦ WELCOME TO MY HOMEPAGE ✦
+                        STUDENT INFORMATICS ✦
+                        WELCOME TO MY HOMEPAGE ✦
+                    </div>
+                </div>
 
-<img src="./img/loading.gif" alt="Retro GIF" class="retro-gif"> 
-<img src="./img/underconstruction.gif" alt="Retro GIF" class="retro-gif">
-<br>            
-<a href="#projects">Lihat project saya</a>
-        </section>
-        <hr>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Saya seorang mahasiswa yang sedang belajar dan mengembangkan keterampilan saya dalam berbagai bidang. Saya tertarik pada teknologi, desain, dan pengembangan web.</p>
-        </section>
-        <hr>
-        <section id="projects">
-            <h2>My Projects</h2>
-
-            <article class="project-card">
-                <h3>SmartRoad WebGIS</h3>
-                <p>
-                    Proyek WebGIS untuk pemetaan jalan dan
-                    trotoar rusak berbasis crowdsourcing.
+                <p class="home-link">
+                    <a href="#projects">Lihat project saya &raquo;</a>
                 </p>
-            </article>
 
-            <article class="project-card">
-                <h3>Bendahara Management</h3>
-                <p>
-                    Aplikasi pengelolaan data dan transaksi
-                    bendahara berbasis web.
-                </p>
-            </article>
-        </section>
+            </section>
 
-        <hr>
+            <hr>
 
-        
-<!-- My Skills -->
-<section id="skills">
-    <h2>My Skills</h2>
+            <!-- About -->
+            
+<!-- About Me -->
+<section id="about">
+    <h2>ABOUT</h2>
 
-    <p>✦ TECHNOLOGIES I WORK WITH ✦</p>
+    <div class="about-profile">
+        <div class="about-photo-frame">
+            <img
+                src="./img/photo.jpeg"
+                alt="Foto X"
+                class="about-photo"
+            >
 
-    
-<div class="skills-badges">
-    <span class="skill-badge badge-html">
-        <i class="fa-brands fa-html5" aria-hidden="true"></i>
-        HTML
-    </span>
+            <p class="photo-caption">
+                ★ THAT'S ME! ★
+            </p>
+        </div>
 
-    <span class="skill-badge badge-css">
-        <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
-        CSS
-    </span>
+        <div class="about-text">
+            <h3>HELLO, INTERNET PEOPLE!</h3>
 
-    <span class="skill-badge badge-js">
-        <i class="fa-brands fa-js" aria-hidden="true"></i>
-        JavaScript
-    </span>
+            <p>
+                Aku X, mahasiswa Informatika yang
+                tertarik pada teknologi, Linux, pemrograman,
+                dan pengembangan web.
+            </p>
 
-    <span class="skill-badge badge-php">
-        <i class="fa-brands fa-php" aria-hidden="true"></i>
-        PHP
-    </span>
+            <p>
+                Saat ini aku sedang belajar membuat berbagai
+                proyek dan mengeksplorasi dunia teknologi.
+                Selamat datang di personal homepage-ku!
+            </p>
+            <p>
+                Jika ada pertanyaan, saran, atau sekadar ingin menyapa,
+                jangan ragu untuk menghubungiku melalui halaman kontak.
+            </p>
 
-    <span class="skill-badge badge-laravel">
-        <i class="fa-brands fa-laravel" aria-hidden="true"></i>
-        Laravel
-    </span>
-
-    <span class="skill-badge badge-python">
-        <i class="fa-brands fa-python" aria-hidden="true"></i>
-        Python
-    </span>
-
-    <span class="skill-badge badge-mysql">
-        <i class="fa-solid fa-database" aria-hidden="true"></i>
-        MySQL
-    </span>
-</div>
-
+            <p class="about-signature">
+                ~ X
+            </p>
+        </div>
+    </div>
 </section>
 
 
-        <hr>
+            <hr>
 
-<!-- Guestbook -->
-<section id="guestbook">
-    <h2>
-        <i class="fa-solid fa-book-open"></i>
-        SIGN MY GUESTBOOK!
+            <!-- Projects -->
+            <section id="projects">
+    <h2 class="section-banner">
+        ★ MY PROJECTS ★
     </h2>
 
-    <p>
-        ✦ VISITORS, LEAVE YOUR MARK HERE! ✦
-    </p>
+    <article class="project-card">
+        <h3>SmartRoad WebGIS</h3>
+        <p>
+            Proyek WebGIS untuk pemetaan jalan dan trotoar
+            rusak berbasis crowdsourcing.
+        </p>
+    </article>
 
-    <div class="guestbook-frame">
-        <iframe
-            src="https://kazzpars.atabook.org/"
-            title="Kazzpars Guestbook"
-            loading="lazy"
-            width="100%"
-            height="650"
-            style="border: none;"
-        ></iframe>
+    <article class="project-card">
+        <h3>Bendahara Management</h3>
+        <p>
+            Aplikasi pengelolaan data dan transaksi
+            bendahara berbasis web.
+        </p>
+    </article>
+</section>
+
+            <hr>
+
+            <!-- Skills -->
+            <section id="skills">
+                <h2 class="section-banner">
+                    ★ MY SKILLS ★
+                </h2>
+                <p>✦ TECHNOLOGIES I WORK WITH ✦</p>
+
+                <div class="skills-badges">
+                    <span class="skill-badge badge-html">
+                        <i class="fa-brands fa-html5" aria-hidden="true"></i>
+                        HTML
+                    </span>
+
+                    <span class="skill-badge badge-css">
+                        <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
+                        CSS
+                    </span>
+
+                    <span class="skill-badge badge-js">
+                        <i class="fa-brands fa-js" aria-hidden="true"></i>
+                        JavaScript
+                    </span>
+
+                    <span class="skill-badge badge-php">
+                        <i class="fa-brands fa-php" aria-hidden="true"></i>
+                        PHP
+                    </span>
+
+                    <span class="skill-badge badge-laravel">
+                        <i class="fa-brands fa-laravel" aria-hidden="true"></i>
+                        Laravel
+                    </span>
+
+                    <span class="skill-badge badge-python">
+                        <i class="fa-brands fa-python" aria-hidden="true"></i>
+                        Python
+                    </span>
+
+                    <span class="skill-badge badge-mysql">
+                        <i class="fa-solid fa-database" aria-hidden="true"></i>
+                        MySQL
+                    </span>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Guestbook -->
+            <section id="guestbook">
+                <h2>
+                    <i class="fa-solid fa-book-open"></i>
+                    SIGN MY GUESTBOOK!
+                </h2>
+
+                <p>✦ VISITORS, LEAVE YOUR MARK HERE! ✦</p>
+
+                <div class="guestbook-frame">
+                    <iframe
+                        src="https://kazzpars.atabook.org/"
+                        title="X Guestbook"
+                        loading="lazy"
+                        width="100%"
+                        height="650"
+                        style="border: none;"
+                    ></iframe>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Contact -->
+            <section id="contact">
+                <h2>CONTACT ME</h2>
+
+                <p class="contact-marquee">
+                    ✦ LET'S GET IN TOUCH! ✦
+                </p>
+
+                <p>
+                    Punya ide proyek, ingin berdiskusi, atau sekadar
+                    menyapa? Kirim pesan kepadaku!
+                </p>
+
+                <div class="contact-buttons">
+                    <a
+                        href="mailto:emailkamu@example.com"
+                        class="contact-button"
+                    >
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        EMAIL ME
+                    </a>
+
+                    <a
+                        href="https://github.com/USERNAME"
+                        class="contact-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        MY GITHUB
+                    </a>
+                </div>
+
+                <p class="contact-footer">
+                    BEST REGARDS FROM X
+                </p>
+            </section>
+
+        </main>
+
     </div>
-</section>
-
-
-        <hr>
-<!-- Contact Us -->
-<section id="contact">
-    <h2>CONTACT US</h2>
-
-    <p class="contact-marquee">
-        ✦ LET'S GET IN TOUCH! ✦
-    </p>
-
-    <p>
-        Punya ide proyek, ingin berdiskusi,
-        atau sekadar menyapa? Kirim pesan kepadaku!
-    </p>
-
-<div class="contact-buttons">
-    <a
-        href="mailto:emailkamu@example.com"
-        class="contact-button"
-    >
-        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-        EMAIL ME
-    </a>
-
-    <a
-        href="https://github.com/USERNAME"
-        class="contact-button"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <i class="fa-brands fa-github" aria-hidden="true"></i>
-        MY GITHUB
-    </a>
-</div>
-
-
-    <p class="contact-footer">
-        BEST REGARDS FROM KAZZPARS
-    </p>
-</section>
-
-    </main>
 
     <footer>
         <p>
-            © 2026 Kazzpars | All Rights Reserved | Designed by Kazzpars
+            &copy; 2026 X | All Rights Reserved |
+            Designed by X
         </p>
         <p>Best viewed with curiosity! 💾</p>
     </footer>
-    </main>
-    <script src="./dateTime.js"></script>
+
 </body>
 </html>
